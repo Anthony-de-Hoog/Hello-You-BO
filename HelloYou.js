@@ -1,51 +1,541 @@
 var readlineSync = require("readline-sync");
- 
-//Dit is een test code om te zien of ik via keuzes verschillende wegen kan kiezen
 
-console.log("Je loopt in je buurt en je ziet de beruchte spookhuis waar iedereen bang voor is")
-console.log("Ga je naar binnen?")
-  tekst1 = "Ja, ik voel mij moedig genoeg"
-  tekst2 = "Nee, want ik ben slim"
-  vraag1 = ["Ja, ik voel mij moedig genoeg", "Nee, want ik ben slim"];
-  index = readlineSync.keyInSelect(vraag1, "Ga je naar binnen?");
+//Ik ga proberen of ik baas gevechten kan doen
+function rollDice() {
+    let rand = Math.ceil(Math.random() * 14);
+    return rand;
+}
 
-//Hier wordt bepaalt welke richting je op gaat
 
-if ( tekst1 === vraag1[index] ) {
-    console.log("Je besluit dat je stoer en populair bent en je gaat het enge huis naar binnen.")
+
+let ghosthealth = 20
+let ghostattack = 5
+
+let dhealth = 50
+let dattack = 5
+
+
+Game()
+
+function Game() {
+    console.log("You're walking through your street. ")
+    console.log("You notice that the missing person posters of Katie who have been missing since last summer still hang there. ")
+    console.log("The sun is setting and you have to hurry home because mom made chicken, and you love chicken. ")
+    console.log("But as you're hurrying home you notice the old abandoned house where there are ridiculous stories about it being haunted. ")
     
-    einde1
-} else if ( tekst2 === vraag1[index] ) {
-    console.log("Je besluit dat je nog niet dood wil en je loopt weg.")
-    einde2
-} else {
-    console.log("Je heb besloten om het spel te stoppen")
+console.log(`%c
+                               .     .
+                               !!!!!!!
+                       .       [[[|]]]    .
+                       !!!!!!!!|--_--|!!!!!
+                       [[[[[[[[|_(X)_/]]]]]
+               .-.     /-_--__-/_--_-(-_--(
+               |=|    /-_---__/__-__-_(__-_(
+           . . |=| ._/-__-__(===========/-__(_
+           !!!!!!!!!)========[ /]]|[[| ]=====/
+          /-_--_-_-_[[[[[[[[[||==  == ||]]]]]]
+         /-_--_--_--_|=  === ||=/^|^} ||== =|
+        /-_-/^|^}-_--| /^|^}=|| | | | ||^}= |
+       /_-_-| | |-_--|=| | | ||=|_|_|=||"|==|
+      /-__--|_|_|_-_-| |_|_|=||______=||_| =|
+     /_-__--_-__-___-|_=__=_.'---------'._=_|__
+    /-----------------------|===========/-----/
+   ^^^|^^^^^^^^^^^^^^^^^^^^^^[[|]]|[[|]]=====/
+      |.' ..==::'"'::==.. '.[ /~~~~~\ ]]]]]]]
+      | .'=[[[|]]|[[|]]]='._||==  =  || =| ]
+      ||== =|/ _____ {|== = ||=/^|^}=||^| ||
+      || == '||-----||' = ==|| | | |=|| |=||
+      ||= == ||:^s^:|| = == ||=| | | || |=||
+      || = = ||:___:||= == =|| |_|_| ||_|=||
+     _||_ = =||o---.|| = ==_||_= == =||==_||_
+     {__/= = ||:   :||= == {__/[][][][][]|__/
+     [||]= ==||:___:|| = = [||]((//((//(([||]
+     }  {---'"'-----'"'- --}  {//))//))//}  {
+   __[==]__________________[==]((//((//(([==]_
+  |'|~~~~|================|~~~~|~~~~~~~~|~~~~||
+  |^| ^  |================|^   | ^ ^^ ^ |  ^ ||
+ {|//((/^|/==============}|/^}}}^/^.{^///))//|///
+((///)((//===============()//)(///))((////)((/////
+""'""'""".'..'. ' '. ''..'.""'""'""'""''"''"''""
+`, `font-family: monospace`);
+    console.log("You are curious if the stories may be true or are just some ridiculous stories that the weird kid Kevin keeps telling about. ")
+    console.log("Do you want to go to take a peek inside the house to prove Kevin wrong or do you want to go home and eat the delicious chicken your mom made? ")
+    antwoord1a = "It wouldn't hurt to take a peek. What's the worst thing that could happen? Me getting kidnapped by a stranger who will do horrible things to me until I beg God to kill me? I'll take the risk."
+    antwoord1b = "I don't think that's a great idea. What if Katie did look in there and is missing because of that? Plus mom is making chicken and I really haven't eaten all day. So I'll continue going home."
+    vraag1 = [antwoord1a, antwoord1b];
+    index = readlineSync.keyInSelect(vraag1, "Do you want to go to take a peek inside the house to prove Kevin wrong or do you want to go home and eat the delicious chicken your mom made?");
+
+    //Hier wordt bepaalt welke richting je op gaat
+
+    if (antwoord1a === vraag1[index]) {
+        console.log(" You decide it wouldn't hurt to just peek around the house to see if there are any ghosts or creepy old men. So you walk over to the abandoned house. You peek through the window and notice that its all black in there. All you can see are some furniture underneath a white blanket. How long has this house been abandoned for? You then go to the door and see if its locked. You then open the door and a sudden chill washes over you.")
+
+        stuk2()
+    } else if (antwoord1b === vraag1[index]) {
+        console.log(" I don't think that's a great idea. ")
+        console.log("What if Katie did look in there and is missing because of that? ")
+        console.log("Plus mom is making chicken and I really haven't eaten all day. ")
+        console.log("So I'll continue going home. ")
+        einde()
+    } else {
+        console.log("You have decided to quit the game. ")
+        gameover()
+    }
+
+    function stuk2() {
+        console.log("You decide it wouldnt hurt to just peek around the house to see if there are any ghosts or creepy old men. ")
+        console.log("So you walk over to the abandoned house. ")
+        console.log("You peek through the window and notice that its all black in there. ")
+        console.log("All you can see are some furniture underneath a white blanket. ")
+        console.log("How long has this house been abandoned for? ")
+        console.log("You then go to the door and see if its locked. ")
+        console.log("You then open the door and a sudden chill washes over you.")
+        console.log("Are you sure you want to go in the house? ")
+        antwoord2a = "No, I want to go back to mommy and her delicious chicken! "
+        antwoord2b = "Yes, I'm a big boy! Mom and her chicken can wait! "
+        vraag2 = [antwoord2a, antwoord2b];
+        index = readlineSync.keyInSelect(vraag2, "Are you sure you want to go in the house? ");
+
+        //Hier wordt bepaalt welke richting je op gaat
+
+        if (antwoord2a === vraag2[index]) {
+            einde()
+        } else if (antwoord2b === vraag2[index]) {
+            stuk3()
+        } else {
+            console.log("You have decided to quit the game. ")
+            gameover()
+        }
+    }
+
+    function stuk3() {
+        console.log("You then walk inside the abandoned house. ")
+        console.log("The door suddenly closes on itself and you try to open it. ")
+        console.log("It's locked. ")
+        console.log("That's what happens if a house isn't maintained frequently. ")
+        console.log("You then suddenly hear a creaking of the stairs, but you can't see where the stairs are. ")
+        console.log("You need some source of light. ")
+        console.log("What will you do? ")
+        antwoord3a = "I will go look on the ground to see if there is a flashlight conveniently laying around somewhere. "
+        antwoord3b = " I will feel the wall to see if there is a light switch so I can turn on the light. "
+        vraag3 = [antwoord3a, antwoord3b];
+        index = readlineSync.keyInSelect(vraag3, "What will you do? ");
+
+        //Hier wordt bepaalt welke richting je op gaat
+
+        if (antwoord3a === vraag3[index]) {
+            stuk4()
+        } else if (antwoord3b === vraag3[index]) {
+            stuk7()
+        } else {
+            console.log("You have decided to quit the game. ")
+            gameover()
+        }
+    }
+
+    function stuk4() {
+        console.log("You go look at the floor to find something useful. ")
+        console.log("You can't see anything so you go on your knees to crouch to find anything. ")
+        console.log("You crawl by the covered furniture and find yourself hitting your head against a door. ")
+        console.log("Will you open the door? ")
+        antwoord4a = "No, the door is smelly. "
+        antwoord4b = "Yes, maybe there is something useful in there. "
+        vraag4 = [antwoord4a, antwoord4b];
+        index = readlineSync.keyInSelect(vraag4, "Will you open the door? ");
+
+        //Hier wordt bepaalt welke richting je op gaat
+
+        if (antwoord4a === vraag4[index]) {
+            stuk7()
+        } else if (antwoord4b === vraag4[index]) {
+            stuk5()
+        } else {
+            console.log("You have decided to quit the game. ")
+            gameover()
+        }
+    }
+
+    function stuk5() {
+        console.log("You decide to open the door. ")
+        console.log("Even though it's really dark, you can see that it apparently is a closet. ")
+        console.log("In the closet you see Something you think is a flashlight. ")
+        console.log("You grab it, but notice it is molted onto some other device. ")
+        console.log("When you turn on the flashlight and point it into the closet. ")
+        console.log("You then see that the flashlight is attached to a vacuum cleaner and that vacuum cleaner is attached to a green plumber suit with a big L on the hat.")
+        console.log("Will you put on the ridiculous plumber suit with the vacuum attached to it to finally see in the house? ")
+        antwoord5a = "Yes, I need to find the key to open the main door and go back home because mom made chicken! "
+        antwoord5b = "No, I don't want to look ridiculous while roaming this scary house. "
+        vraag5 = [antwoord5a, antwoord5b];
+        index = readlineSync.keyInSelect(vraag5, "Will you put on the ridiculous plumber suit with the vacuum attached to it to finally see in the house? ");
+
+        //Hier wordt bepaalt welke richting je op gaat
+
+        if (antwoord5a === vraag5[index]) {
+            stuk10()
+        } else if (antwoord5b === vraag5[index]) {
+            stuk6()
+        } else {
+            console.log("You have decided to quit the game. ")
+            gameover()
+        }
+    }
+
+    function stuk6() {
+        console.log("You decide that it isn't worth it to look ridiculous while searching for the key so you continue looking while you can't see anything. ")
+        stuk7()
+    }
+
+    function stuk7() {
+        console.log("You struggle your way through the darkness and find yourself at the bottom of some stairs. ")
+        console.log("You hear a weird sound coming from upstairs.  ")
+        console.log("Will you go upstairs to investigate the sound? ")
+        antwoord7a = " No, I can't see anything and might break my neck while trying to go upstairs.  "
+        antwoord7b = "Yes, maybe it was the key falling somehow upstairs. "
+        vraag7 = [antwoord7a, antwoord7b];
+        index = readlineSync.keyInSelect(vraag7, "Will you go upstairs to investigate the sound? ");
+
+        //Hier wordt bepaalt welke richting je op gaat
+
+        if (antwoord7a === vraag7[index]) {
+            stuk8()
+        } else if (antwoord7b === vraag7[index]) {
+            stuk9()
+        } else {
+            console.log("You have decided to quit the game. ")
+            gameover()
+        }
+    }
+
+    function stuk8() {
+        console.log("You decide it wouldn't be wise to go upstairs. ")
+        console.log("You turn around and see a key conveniently laying on a table in front of the stairs. ")
+        console.log("You try the key on the front door and unlock it. ")
+        console.log("You now can finally go outside.")
+        einde()
+    }
+
+    function stuk9() {
+        console.log("You decide to go upstairs. ")
+        console.log("When you struggle to climb the stairs you suddenly see a ghost appear in front of you. ")
+        console.log("Before you can do anything it already possesses you. ")
+        einde3()
+
+    }
+
+    function stuk10() {
+        console.log("You put on the green plumber suit that has the vacuum cleaner and flashlight attached to it. ")
+        console.log("You now can finally look around. ")
+        console.log("You hear a sound coming from upstairs. ")
+        console.log("Will you go investigate the sound or will you continue searching downstairs before going upstairs? ")
+        antwoord10a = "I will go investigate the sound. Maybe it was the key somehow falling. "
+        antwoord10b = "I will continue searching downstairs before going upstairs. "
+        vraag10 = [antwoord10a, antwoord10b];
+        index = readlineSync.keyInSelect(vraag10, "Will you go investigate the sound or will you continue searching downstairs before going upstairs? ");
+
+        //Hier wordt bepaalt welke richting je op gaat
+
+        if (antwoord10a === vraag10[index]) {
+            stuk11()
+        } else if (antwoord10b === vraag10[index]) {
+            stuk12()
+        } else {
+            console.log("You have decided to quit the game. ")
+            gameover()
+        }
+    }
+
+    function stuk11() {
+        console.log("You go upstairs and see a ghost appear in front of you. ")
+        console.log("All you can think about is using the vacuum to hopefully suck the ghost.")
+        GhostEncounter()
+    }
+    function GhostEncounter() {
+        let hp = 30
+        while (ghosthealth > 0) {
+            console.log("What will you do? ")
+            fightghost = "I will try to suck him up! "
+            defendghost = "I will defend myself from the ghost! "
+            ghostfight = [fightghost, defendghost];
+            index = readlineSync.keyInSelect(ghostfight, "What will you do?")
+            //Hier wordt bepaalt welke richting je op gaat
+
+            if (fightghost === ghostfight[index]) {
+                let attack = rollDice();
+                let ghostdamage = (attack);
+                ghosthealth -= ghostdamage
+                console.log("You try to suck up the ghost, you do " + attack + " damage. ");
+
+                if (ghosthealth <= 0) {
+                    einde2()
+                    break
+                } else if (ghosthealth >= 0) {
+                    hp -= ghostattack
+                    console.log("The ghost tries to posses you. You dodge him but hit your head against the wall and do " + ghostattack + " damage on yourself, you still have " + hp + " hp left. ")
+
+                    if (hp < 1) {
+                        einde3()
+                        break
+                    } else if (hp > 1) {
+                        GhostEncounter()
+                        break
+                    }
+                } else {
+                    GhostEncounter()
+                }
+            } else if (defendghost === ghostfight[index]) {
+                if (Math.round(Math.random() * 4) >= 2) {
+                    console.log("You succesfully dodge the ghost his attack. ")
+                    GhostEncounter()
+                    break
+                } else if (Math.round(Math.random() * 4) <= 2) {
+                    hp -= ghostattack
+                    console.log("You tried to defend yourself against the ghost, but you failed miserably. The ghost does " + ghostattack + " damage on you. You have " + hp + " hp left.")
+                    GhostEncounter()
+                }
+            } else {
+                console.log("You have decided to quit the game. ")
+                gameover()
+                break
+            }
+        }
+    }
+
+    function stuk12() {
+        console.log("You decide that you will look a bit longer around downstairs. ")
+        console.log("While looking you notice a bookcase. ")
+        console.log("You take a closer look and notice it isn't a bookcase, but a movie case with a lot of movies in it. ")
+        console.log("You then notice your favorite movie called Backdoor Openers 9. ")
+        console.log("Will you take Backdoor Openers 9 back home with you to watch with your mother for movie night or not? ")
+        antwoord12a = " No, mom and I have watched that movie way too much. I actually should continue searching for the key. "
+        antwoord12b = "Yes, mom would love to watch it again with me. I better take it home with me.  "
+        vraag12 = [antwoord12a, antwoord12b];
+        index = readlineSync.keyInSelect(vraag12, "Will you take Backdoor Openers 9 back home with you to watch with your mother for movie night or not? ");
+
+        //Hier wordt bepaalt welke richting je op gaat
+
+        if (antwoord12a === vraag12[index]) {
+            stuk13()
+        } else if (antwoord12b === vraag12[index]) {
+            stuk14()
+        } else {
+            console.log("You have decided to quit the game. ")
+            gameover()
+        }
+    }
+
+    function stuk13() {
+        console.log("You decided that you and mom have watched Backdoor Openers 9 way too much and that your mom probably already picked another movie for tonight. ")
+        console.log("You then realize you can't find any keys downstairs and decide to go upstairs.")
+        stuk11()
+    }
+
+    function stuk14() {
+        console.log("You decide that mom would love to watch Backdoor Openers 9 together with you again and you decide to grab it. ")
+        console.log("when you try to grab it you notice it's stuck and when you pull harder you see that the movie case suddenly moves sideways, revealing a secret staircase leading down. ")
+        console.log("Out of curiosity you walk down the secret stairs and you find yourself in a dark dungeon looking place. ")
+        console.log("While looking a bit around you notice a dark hooded figure with a corpse of a girl on an altar in front of him. ")
+        console.log("You can hear him whispering some language you can't understand. ")
+        console.log("When you walk slowly closer the hooded figure notices you and summons a big demon looking beast.")
+        DemonEncounter()
+    }
+
+
+    function DemonEncounter() {
+        let hp = 30
+        while (dhealth > 0) {
+            console.log("What will you do? ")
+            fightd = "I will try to suck him up! "
+            defendd = "I will defend myself from the Demon! "
+            truefightd = "I will throw a rock against his head with my vacuum!"
+            dfight = [fightd, defendd, truefightd];
+            index = readlineSync.keyInSelect(dfight, "What will you do?")
+
+
+            if (truefightd === dfight[index]) {
+                let attack = rollDice();
+                let ddamage = (attack);
+                dhealth -= ddamage
+                console.log("You suck a piece of rock onto your vacuum cleaner and point it towards the demon, you then throw the rock with the blow button of your vacuum cleaner and hits the demon, weakening it. You did " + attack + " damage to him. ");
+
+                if (dhealth <= 0) {
+                    einde4()
+                    break
+                } else if (dhealth >= 0) {
+                    hp -= dattack
+                    console.log("The demon tries to possess. You feel yourself weakening. You lose " + dattack + " hp, you still have " + hp + " hp left. ")
+
+                    if (hp < 1) {
+                        einde3()
+                        break
+                    } else if (hp > 1) {
+                        DemonEncounter()
+                        break
+                    }
+                } else {
+                    DemonEncounter()
+                }
+            } else if (defendd === dfight[index]) {
+                if (Math.round(Math.random() * 4) >= 2) {
+                    console.log("You succesfully dodge the Demon his attack. ")
+                    DemonEncounter()
+                    break
+                } else if (Math.round(Math.random() * 4) <= 2) {
+                    hp -= dattack
+                    console.log("You tried to defend yourself against the Demon, but you failed miserably. The Demon hits you with his claws and does " + ghostattack + " damage on you. You have " + hp + " hp left.")
+                    DemonEncounter()
+                }
+            } else if (fightd === dfight[index]) {
+                console.log("You try to suck the demon with your vacuum cleaner, but it doesn't seem to work.")
+                DemonEncounter()
+                break
+            } else {
+                console.log("You have decided to quit the game. ")
+                gameover()
+                break
+            }
+        }
+    }
+
+
+
+    //Dit zijn de eindes
+
+    function einde() {
+        console.log("You decide to go home. ")
+        console.log("When you arrive home you smell the delicious chicken that your mom has made. ")
+        console.log("You and your mom are eating the chicken and you continue living your boring oblivious life. ")
+        console.log(`%c
+        __
+       /'{>
+   ____) (____
+ //'--;   ;--'||
+///////|_/|||||||
+       m m
+`, `font-family: monospace`);
+
+        console.log("End 1: MOM MADE CHICKEN! ")
+        gameover()
+    }
+
+    function einde2() {
+        console.log("You succeed in sucking the ghost in your vacuum cleaner. ")
+        console.log("Now the whole house lights up and some money falls out of nowhere all around you and a key for the front door drops in front of you. ")
+        console.log("You realise that you could make some money busting ghosts, so you decide to create a company called Busters of Ghosts. ")
+        console.log(`%c
+                       ---                                     
+                   -        --                             
+                --( /     | )XXXXXXXXXXXXX                   
+            --XXX(   O   O  )XXXXXXXXXXXXXXX-              
+           /XXX(       U     )        XXXXXXX|               
+         /XXXXX(              )--   XXXXXXXXXXX|             
+        /XXXXX/ (      O     )   XXXXXX   |XXXXX|
+        XXXXX/   /            XXXXXX   |   |XXXXX----        
+        XXXXXX  /          XXXXXX         |  ----  -         
+---     XXX  /          XXXXXX      |           ---        
+  --  --  /      /|  XXXXXX            /     ---=         
+    -        /    XXXXXX              '--- XXXXXX         
+      --|/XXX| XXXXXX                      /XXXXX         
+         |XXXXXXXXX                        /XXXXX/
+          |XXXXXX                         /XXXXX/         
+            |XXXXX--  /                -- XXXX/       
+             --XXXXXXX---------------  XXXXX--         
+                 |XXXXXXXXXXXXXXXXXXXXXXXX-            
+                   --XXXXXXXXXXXXXXXXXX- 
+`, `font-family: monospace`);
+
+
+        console.log("End 2: Bustin' makes me feel good! ")
+        gameover()
+
+    }
+
+    function einde3() {
+        console.log("It possesses you. ")
+        console.log("You can't do anything anymore. ")
+        console.log("This can be considered you dying, but you haven't actually died. ")
+        console.log("You are in a state of consciousness but you can't control your body. ")
+        console.log("All you can do is watch in first person how this entity is ruining your reputation and worse of all, embarrassing yourself in front of your crush Jessica. ")
+        console.log("This might even be considered worse than dying. ")
+        console.log("You wish for someone to kill you. ")
+        console.log(`%c
+      ////^||||
+      | ^   ^ |
+     @ (x) (x) @
+      |   <   |
+      |  ___  |
+       {_____/
+     ____|  |____
+    /    |__/    }
+   /              }
+  /(_/|        |{_/}
+ / /  |        |  { }
+( <   |        |   > )
+| |   |        |  / /
+| |   |________| / /
+| |   |
+`, `font-family: monospace`);
+
+
+        console.log("End 3: Possessed")
+        gameover()
+    }
+
+    function einde4() {
+        console.log("When you blow the final rock against the demon, it's too weakened to have a physical body. ")
+        console.log("You then suck the demon in your vacuum cleaner. ")
+        console.log("After sucking up the demon you notice the hooded satanic culprit and you then try to suck him up too. ")
+        console.log("You notice you can only suck up his black cloak, revealing the satanic culprit. ")
+        console.log("It is the weird kid, Kevin! ")
+        console.log("Out of anger you punch Kevin, steal his keys and walk back out of the house. ")
+        console.log("The next day you notice how the house isn't there anymore and no one seems to remember it too. ")
+        console.log("Kevin also seems to be gone, but you don't mind. ")
+        console.log("You never liked Kevin anyway. ")
+        console.log(`%c
+              _,-'|
+           ,-'._  |
+ .||,      |####) |
+ { ',/     {####| |
+= ,. =      |###| |
+/ || }    ,-'{#/,' .
+  ||     ,'    ,,.  .
+  ,|____,' , ,;' (| |
+ (3|}    _/|/'   _| |
+  ||/,-''  | >-'' _,||
+  ||'      ==| ,-'  ,'
+  ||       |  V | ,|
+  ||       |    |  |
+  ||       |    |   }
+  ||       |    {    }
+  ||       |     |    }
+  ||       |      {_,-'
+  ||       |___,,--")_|
+  ||         |_|   ccc/
+  ||        ccc/
+  ||           
+`, `font-family: monospace`);
+        console.log("End 4: Mystery solved, It's fucking Kevin ")
+        gameover()
+    }
 }
 
-//Dit zijn de test eindes
 
-function einde1(){
-   console.log("Je loopt naar binnen en wordt gelijk neergestoken door de geest genaamd Piet. Wat een loser.")
-   console.log("Einde 1: de domme keuze")
-}
+gameover()
 
-function einde2(){
-   console.log("Je besluit dat je nog niet dood wil en je gaat verder met je leven.")
-   console.log("Einde 2: de slimme keuze")
-}
+function gameover() {
+    //Hier wordt gevraagd of je opnieuw wilt beginnen
+    //Wil nog een sort loop maken naar het begin
 
-//Hier wordt gevraagd of je opnieuw wilt beginnen
-//Wil nog een sort loop maken naar het begin
+    console.log("Bedankt voor het spelen van mijn game! ")
+    console.log("Wil je opnieuw spelen?")
+    opnieuw = "Ja, ik wil opnieuw spelen"
+    stoppen = "nee, ik wil stoppen."
+    laatstevraag = ["Ja, ik wil opnieuw spelen", "nee, ik wil stoppen."]
+    index = readlineSync.keyInSelect(laatstevraag, "Wil je opnieuw spelen?");
 
-console.log("Bedankt voor het spelen van mijn game! ")
-console.log("Wil je opnieuw spelen?")
-opnieuw = "Ja, ik wil opnieuw spelen"
-stoppen = "nee, ik wil stoppen."
-laatstevraag = ["Ja, ik wil opnieuw spelen","nee, ik wil stoppen." ]
-index = readlineSync.keyInSelect(laatstevraag, "Wil je opnieuw spelen?");
-
-if (opnieuw === laatstevraag[index]) {
-    console.log("Het spel begint opnieuw.")
-} else {
-    console.log("Het spel wordt nu afgesloten.")
+    if (opnieuw === laatstevraag[index]) {
+        console.log("Het spel begint opnieuw.")
+        Game()
+    } else if (stoppen === laatstevraag[index]) {
+        console.log("Het spel wordt nu afgesloten.")
+    }
 }
