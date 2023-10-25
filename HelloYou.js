@@ -23,40 +23,37 @@ function Game() {
     console.log("The sun is setting and you have to hurry home because mom made chicken, and you love chicken. ")
     console.log("But as you're hurrying home you notice the old abandoned house where there are ridiculous stories about it being haunted. ")
     
-console.log(`%c
-                               .     .
-                               !!!!!!!
-                       .       [[[|]]]    .
-                       !!!!!!!!|--_--|!!!!!
-                       [[[[[[[[|_(X)_/]]]]]
-               .-.     /-_--__-/_--_-(-_--(
-               |=|    /-_---__/__-__-_(__-_(
-           . . |=| ._/-__-__(===========/-__(_
-           !!!!!!!!!)========[ /]]|[[| ]=====/
-          /-_--_-_-_[[[[[[[[[||==  == ||]]]]]]
-         /-_--_--_--_|=  === ||=/^|^} ||== =|
-        /-_-/^|^}-_--| /^|^}=|| | | | ||^}= |
-       /_-_-| | |-_--|=| | | ||=|_|_|=||"|==|
-      /-__--|_|_|_-_-| |_|_|=||______=||_| =|
-     /_-__--_-__-___-|_=__=_.'---------'._=_|__
-    /-----------------------|===========/-----/
-   ^^^|^^^^^^^^^^^^^^^^^^^^^^[[|]]|[[|]]=====/
-      |.' ..==::'"'::==.. '.[ /~~~~~\ ]]]]]]]
-      | .'=[[[|]]|[[|]]]='._||==  =  || =| ]
-      ||== =|/ _____ {|== = ||=/^|^}=||^| ||
-      || == '||-----||' = ==|| | | |=|| |=||
-      ||= == ||:^s^:|| = == ||=| | | || |=||
-      || = = ||:___:||= == =|| |_|_| ||_|=||
-     _||_ = =||o---.|| = ==_||_= == =||==_||_
-     {__/= = ||:   :||= == {__/[][][][][]|__/
-     [||]= ==||:___:|| = = [||]((//((//(([||]
-     }  {---'"'-----'"'- --}  {//))//))//}  {
-   __[==]__________________[==]((//((//(([==]_
-  |'|~~~~|================|~~~~|~~~~~~~~|~~~~||
-  |^| ^  |================|^   | ^ ^^ ^ |  ^ ||
- {|//((/^|/==============}|/^}}}^/^.{^///))//|///
-((///)((//===============()//)(///))((////)((/////
-""'""'""".'..'. ' '. ''..'.""'""'""'""''"''"''""
+    console.log(`%c
+                           .-----.
+                         .'       '.
+                        :      ^v^  :
+                        :           :
+                        '           '
+         |~        www   '.       .'
+        /.\\       /#^^\\_   '-/\\--'
+       /#  \\     /#%    \\   /# \\
+      /#%   \\   /#%______\\ /#%__\\
+     /#%     \\   |= I I ||  |- |
+     ~~|~~~|~~   |_=_-__|'  |[]|
+       |[] |_______\\__|/_ _ |= |'.
+^V^    |-  /= __   __    /-\\|= | :;
+       |= /- /\\/  /\\/   /=- \\.-' :;
+       | /_.=========._/_.-._\\  .:'
+       |= |-.'.- .'.- |  /|\\ |.:'
+       \\  |=|:|= |:| =| |~|~||'|
+       |~|-|:| -|:|  |-|~|~||=|      ^V^
+       |=|=|:|- |:|- | |~|~|| |
+       | |-_~__=_~__=|_^^^^^|/___
+       |-(=-=-=-=-=-(|=====/=_-=/\\
+       | |=_-= _=- _=| -_=/=_-_/__\\ 
+       | |- _ =_-  _-|=_- |]#| I II
+       |=|_/ \\_-_= - |- = |]#| I II
+       | /  _/ \\. -_=| =__|]!!!I_II!!
+      _|/-'/  ' \\_/ \\|/' _ ^^^^'.==_^.
+    _/  _/'-./'-; '-.\\_ / \\_'\\'. '. ==='.
+   / .-'  __/_   '.   _/.' .-' '-. ; ====;\\
+  /.   './    \\ '. \\ / -  /  .-'.' ====='  >
+/  \\  /  .-' '--.  / .' /  '-.' ======.' /
 `, `font-family: monospace`);
     console.log("You are curious if the stories may be true or are just some ridiculous stories that the weird kid Kevin keeps telling about. ")
     console.log("Do you want to go to take a peek inside the house to prove Kevin wrong or do you want to go home and eat the delicious chicken your mom made? ")
@@ -217,6 +214,41 @@ console.log(`%c
     function stuk9() {
         console.log("You decide to go upstairs. ")
         console.log("When you struggle to climb the stairs you suddenly see a ghost appear in front of you. ")
+        console.log(`%c
+                       ___
+                     .;:::;--.
+                   .::::::::::-.
+                 .::::::::::::::.
+           ,.....;_'-:::::::::::'
+          ::::::::::-._':::::::/
+          ;::;-------._'--._':;
+        .-'~~          ~'-. |/_____
+      .'                   '.:::::::
+    ,'                       '.::.;'
+   :      , ___         _      '--
+  :       '/   |       / ',     :
+ :            .'|_   _/ (0;     :
+ :           ,' (0)/  '. ~;     ;
+:           _;   ~;    '._;__   '--.
+:          ' '~~~~   _,-'    '.     '.
+ '.                 .'         ;      :
+  '.                '.        ,'      :
+   '.        (---)   '._____,-'       ;
+    '.         :                     ,'
+     '._       '._                  ,'
+        '-._      '---._____.--' _,'
+            '-._               ,'
+                ;              '._
+                :                 |'.
+                :               :: | '.
+                :                  ::: '.
+                : ::    'Y'         : :: '.
+                ::::      ;           :  : '.
+                ::        :             : : '.
+                :         :               :  :
+                : ::     :'             :: : :
+                :  :     :                :: :
+`, `font-family: monospace`);
         console.log("Before you can do anything it already possesses you. ")
         einde3()
 
@@ -249,9 +281,29 @@ console.log(`%c
         console.log("All you can think about is using the vacuum to hopefully suck the ghost.")
         GhostEncounter()
     }
+
     function GhostEncounter() {
         let hp = 30
         while (ghosthealth > 0) {
+            console.log(`%c
+     .-----.
+   .' -   - '.
+  /  .-. .-.  \\
+  |  | | | |  |
+   \\ \\o/ \\o/ / 
+  _|    ^    |_
+ | (  '---'  / |
+ / /'--. .--'\\ \\
+/ /'---' '---'\\ \\
+'.__.       .__.'
+    '|     |'
+     |     |
+     |      '--.
+      '.        '|
+        ''---.   |
+            ,__) /
+             '..'
+         `, `font-family: monospace`);
             console.log("What will you do? ")
             fightghost = "I will try to suck him up! "
             defendghost = "I will defend myself from the ghost! "
@@ -264,6 +316,25 @@ console.log(`%c
                 let ghostdamage = (attack);
                 ghosthealth -= ghostdamage
                 console.log("You try to suck up the ghost, you do " + attack + " damage. ");
+                                console.log(`%c
+                .-----.
+              .' -   - '.
+             /  .-. .-.  \\
+             |  | | | |  |
+              \\ \\x/ \\x/ / 
+             _|    ^    |_
+            | (    O    / |
+            / /'--. .--'\\ \\
+           / /'---' '---'\\ \\
+           '.__.       .__.'
+               '|     |'
+                |     |
+                |      '--.
+                 '.        '|
+                   ''---.   |
+                       ,__) /
+                        '..'
+                    `, `font-family: monospace`);
 
                 if (ghosthealth <= 0) {
                     einde2()
@@ -342,6 +413,29 @@ console.log(`%c
 
     function DemonEncounter() {
         let hp = 30
+        console.log(`%c
+        *                       *
+        *                 *
+       )       (\\___/)     (
+    * /(       \\ (. .)     )\\ *
+      # )      c\\   >'    ( #
+       '         )-_/      '
+     \\\\|,    ____| |__    ,|//
+       \\ )  (  '  ~   )  ( /
+        #\\ / /| . ' .) \\ /#
+        | \\ / )   , / \\ / |
+         \\,/ ;;,,;,;   \\,/
+          _,#;,;;,;,
+         /,i;;;,,;#,;
+        //  %;;,;,;;,;
+       ((    ;#;,;%;;,,
+      _//     ;,;; ,#;,
+     /_)      #,;    ))
+             //      \\|_
+             \\|_      |#\\
+              |#\\      -"
+               -"
+               `, `font-family: monospace`);
         while (dhealth > 0) {
             console.log("What will you do? ")
             fightd = "I will try to suck him up! "
@@ -356,7 +450,29 @@ console.log(`%c
                 let ddamage = (attack);
                 dhealth -= ddamage
                 console.log("You suck a piece of rock onto your vacuum cleaner and point it towards the demon, you then throw the rock with the blow button of your vacuum cleaner and hits the demon, weakening it. You did " + attack + " damage to him. ");
-
+                console.log(`%c
+                *                       *
+                *                 *
+               )       (\\___/)     (
+            * /(       \\ (x x)     )\\ *
+              # )      c\\   >'    ( #
+               '         )O_/      '
+             \\\\|,    ____| |__    ,|//
+               \\ )  (  '  ~   )  ( /
+                #\\ / /| . ' .) \\ /#
+                | \\ / )   , / \\ / |
+                 \\,/ ;;,,;,;   \\,/
+                  _,#;,;;,;,
+                 /,i;;;,,;#,;
+                //  %;;,;,;;,;
+               ((    ;#;,;%;;,,
+              _//     ;,;; ,#;,
+             /_)      #,;    ))
+                     //      \\|_
+                     \\|_      |#\\
+                      |#\\      -"
+                       -"
+                       `, `font-family: monospace`);
                 if (dhealth <= 0) {
                     einde4()
                     break
@@ -408,8 +524,8 @@ console.log(`%c
         __
        /'{>
    ____) (____
- //'--;   ;--'||
-///////|_/|||||||
+ //'--;   ;--'\\\\
+///////\\_/\\\\\\\\\\\\\\
        m m
 `, `font-family: monospace`);
 
@@ -424,22 +540,22 @@ console.log(`%c
         console.log(`%c
                        ---                                     
                    -        --                             
-                --( /     | )XXXXXXXXXXXXX                   
+                --( /     \\ )XXXXXXXXXXXXX                   
             --XXX(   O   O  )XXXXXXXXXXXXXXX-              
-           /XXX(       U     )        XXXXXXX|               
-         /XXXXX(              )--   XXXXXXXXXXX|             
-        /XXXXX/ (      O     )   XXXXXX   |XXXXX|
-        XXXXX/   /            XXXXXX   |   |XXXXX----        
-        XXXXXX  /          XXXXXX         |  ----  -         
----     XXX  /          XXXXXX      |           ---        
-  --  --  /      /|  XXXXXX            /     ---=         
+           /XXX(       U     )        XXXXXXX\\               
+         /XXXXX(              )--   XXXXXXXXXXX\\             
+        /XXXXX/ (      O     )   XXXXXX   \\XXXXX\\
+        XXXXX/   /            XXXXXX   \\   \\XXXXX----        
+        XXXXXX  /          XXXXXX         \\  ----  -         
+---     XXX  /          XXXXXX      \\           ---        
+  --  --  /      /\\  XXXXXX            /     ---=         
     -        /    XXXXXX              '--- XXXXXX         
-      --|/XXX| XXXXXX                      /XXXXX         
-         |XXXXXXXXX                        /XXXXX/
-          |XXXXXX                         /XXXXX/         
-            |XXXXX--  /                -- XXXX/       
+      --\\/XXX| XXXXXX                      /XXXXX         
+         \\XXXXXXXXX                        /XXXXX/
+          \\XXXXXX                         /XXXXX/         
+            \\XXXXX--  /                -- XXXX/       
              --XXXXXXX---------------  XXXXX--         
-                 |XXXXXXXXXXXXXXXXXXXXXXXX-            
+                 \\XXXXXXXXXXXXXXXXXXXXXXXX-            
                    --XXXXXXXXXXXXXXXXXX- 
 `, `font-family: monospace`);
 
@@ -458,21 +574,21 @@ console.log(`%c
         console.log("This might even be considered worse than dying. ")
         console.log("You wish for someone to kill you. ")
         console.log(`%c
-      ////^||||
+      ////^\\\\\\\\
       | ^   ^ |
      @ (x) (x) @
       |   <   |
       |  ___  |
-       {_____/
+       \\_____/
      ____|  |____
-    /    |__/    }
-   /              }
-  /(_/|        |{_/}
- / /  |        |  { }
-( <   |        |   > )
-| |   |        |  / /
-| |   |________| / /
-| |   |
+    /    |__/    \\
+   /              \\
+  /(_/|        |\\_/\\
+ / /  |        |  \\ \\
+( <   |        |    > )
+ \\ \\  |        |   / /
+  \\ \\ |________|  / /
+   \\ \\|        | / /
 `, `font-family: monospace`);
 
 
@@ -494,20 +610,20 @@ console.log(`%c
               _,-'|
            ,-'._  |
  .||,      |####) |
- { ',/     {####| |
+\\ ', /     \\####| |
 = ,. =      |###| |
-/ || }    ,-'{#/,' .
+/ || \\    ,-'{#/,' .
   ||     ,'    ,,.  .
   ,|____,' , ,;' (| |
- (3|}    _/|/'   _| |
-  ||/,-''  | >-'' _,||
-  ||'      ==| ,-'  ,'
-  ||       |  V | ,|
+ (3|\\    _/|/'   _| |
+  ||/,-''  | >-'' _,\\\\
+  ||'      ==\\ ,-'  ,'
+  ||       |  V \\ ,|
   ||       |    |  |
-  ||       |    |   }
-  ||       |    {    }
-  ||       |     |    }
-  ||       |      {_,-'
+  ||       |    |   \\
+  ||       |    \\    \\
+  ||       |     |    \\
+  ||       |      \\_,-'
   ||       |___,,--")_|
   ||         |_|   ccc/
   ||        ccc/
@@ -516,26 +632,25 @@ console.log(`%c
         console.log("End 4: Mystery solved, It's fucking Kevin ")
         gameover()
     }
-}
 
-
-gameover()
-
-function gameover() {
-    //Hier wordt gevraagd of je opnieuw wilt beginnen
-    //Wil nog een sort loop maken naar het begin
-
-    console.log("Bedankt voor het spelen van mijn game! ")
-    console.log("Wil je opnieuw spelen?")
-    opnieuw = "Ja, ik wil opnieuw spelen"
-    stoppen = "nee, ik wil stoppen."
-    laatstevraag = ["Ja, ik wil opnieuw spelen", "nee, ik wil stoppen."]
-    index = readlineSync.keyInSelect(laatstevraag, "Wil je opnieuw spelen?");
-
-    if (opnieuw === laatstevraag[index]) {
-        console.log("Het spel begint opnieuw.")
-        Game()
-    } else if (stoppen === laatstevraag[index]) {
-        console.log("Het spel wordt nu afgesloten.")
+    function gameover() {
+        //Hier wordt gevraagd of je opnieuw wilt beginnen
+        //Wil nog een sort loop maken naar het begin
+    
+        console.log("Bedankt voor het spelen van mijn game! ")
+        console.log("Wil je opnieuw spelen?")
+        opnieuw = "Ja, ik wil opnieuw spelen"
+        stoppen = "nee, ik wil stoppen."
+        laatstevraag = ["Ja, ik wil opnieuw spelen", "nee, ik wil stoppen."]
+        index = readlineSync.keyInSelect(laatstevraag, "Wil je opnieuw spelen?");
+    
+        if (opnieuw === laatstevraag[index]) {
+            console.log("Het spel begint opnieuw.")
+            Game()
+        } else if (stoppen === laatstevraag[index]) {
+            console.log("Het spel wordt nu afgesloten.")
+        }
     }
 }
+
+
