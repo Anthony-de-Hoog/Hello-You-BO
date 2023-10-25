@@ -8,21 +8,23 @@ function rollDice() {
 
 
 
-let ghosthealth = 20
-let ghostattack = 5
-
-let dhealth = 50
-let dattack = 5
-
-
 Game()
 
 function Game() {
+    let hp = 30
+
+
+    let ghosthealth = 20
+    let ghostattack = 5
+
+    let dhealth = 50
+    let dattack = 5
+    
     console.log("You're walking through your street. ")
     console.log("You notice that the missing person posters of Katie who have been missing since last summer still hang there. ")
     console.log("The sun is setting and you have to hurry home because mom made chicken, and you love chicken. ")
     console.log("But as you're hurrying home you notice the old abandoned house where there are ridiculous stories about it being haunted. ")
-    
+
     console.log(`%c
                            .-----.
                          .'       '.
@@ -283,7 +285,7 @@ function Game() {
     }
 
     function GhostEncounter() {
-        let hp = 30
+
         while (ghosthealth > 0) {
             console.log(`%c
      .-----.
@@ -316,7 +318,7 @@ function Game() {
                 let ghostdamage = (attack);
                 ghosthealth -= ghostdamage
                 console.log("You try to suck up the ghost, you do " + attack + " damage. ");
-                                console.log(`%c
+                console.log(`%c
                 .-----.
               .' -   - '.
              /  .-. .-.  \\
@@ -354,14 +356,23 @@ function Game() {
                     GhostEncounter()
                 }
             } else if (defendghost === ghostfight[index]) {
-                if (Math.round(Math.random() * 4) >= 2) {
-                    console.log("You succesfully dodge the ghost his attack. ")
+                let gdodgechance = rollDice()
+                let gdodge = (gdodgechance)
+                if (gdodge >= 8) {
+                    hp += 5
+                    console.log("You succesfully dodge the ghost his attack and healed 5 hp. You now have " + hp + " hp left")
                     GhostEncounter()
                     break
-                } else if (Math.round(Math.random() * 4) <= 2) {
+                } else if (gdodge <= 8) {
                     hp -= ghostattack
                     console.log("You tried to defend yourself against the ghost, but you failed miserably. The ghost does " + ghostattack + " damage on you. You have " + hp + " hp left.")
-                    GhostEncounter()
+                    if (hp < 1) {
+                        einde3()
+                        break
+                    } else if (hp > 1) {
+                        GhostEncounter()
+                        break
+                    }
                 }
             } else {
                 console.log("You have decided to quit the game. ")
@@ -412,7 +423,7 @@ function Game() {
 
 
     function DemonEncounter() {
-        let hp = 30
+
         console.log(`%c
         *                       *
         *                 *
@@ -491,17 +502,27 @@ function Game() {
                     DemonEncounter()
                 }
             } else if (defendd === dfight[index]) {
-                if (Math.round(Math.random() * 4) >= 2) {
-                    console.log("You succesfully dodge the Demon his attack. ")
+                let ddodgechance = rollDice()
+                let ddodge = (ddodgechance)
+                if (ddodge >= 8) {
+                    hp += 5
+                    console.log("You succesfully dodge the Demon his attack. You healed yourself. You now have " + hp + " hp!")
                     DemonEncounter()
                     break
-                } else if (Math.round(Math.random() * 4) <= 2) {
+                } else if (ddodge <= 8) {
                     hp -= dattack
                     console.log("You tried to defend yourself against the Demon, but you failed miserably. The Demon hits you with his claws and does " + ghostattack + " damage on you. You have " + hp + " hp left.")
-                    DemonEncounter()
+                    if (hp < 1) {
+                        einde3()
+                        break
+                    } else if (hp > 1) {
+                        DemonEncounter()
+                        break
+                    }
                 }
             } else if (fightd === dfight[index]) {
                 console.log("You try to suck the demon with your vacuum cleaner, but it doesn't seem to work.")
+                console.log("The demon look at you weird and laughs at you. You lose morale. ")
                 DemonEncounter()
                 break
             } else {
@@ -636,14 +657,14 @@ function Game() {
     function gameover() {
         //Hier wordt gevraagd of je opnieuw wilt beginnen
         //Wil nog een sort loop maken naar het begin
-    
+
         console.log("Bedankt voor het spelen van mijn game! ")
         console.log("Wil je opnieuw spelen?")
         opnieuw = "Ja, ik wil opnieuw spelen"
         stoppen = "nee, ik wil stoppen."
         laatstevraag = ["Ja, ik wil opnieuw spelen", "nee, ik wil stoppen."]
         index = readlineSync.keyInSelect(laatstevraag, "Wil je opnieuw spelen?");
-    
+
         if (opnieuw === laatstevraag[index]) {
             console.log("Het spel begint opnieuw.")
             Game()
