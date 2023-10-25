@@ -19,7 +19,7 @@ function Game() {
 
     let dhealth = 50
     let dattack = 5
-    
+
     console.log("You're walking through your street. ")
     console.log("You notice that the missing person posters of Katie who have been missing since last summer still hang there. ")
     console.log("The sun is setting and you have to hurry home because mom made chicken, and you love chicken. ")
@@ -485,6 +485,8 @@ function Game() {
                        -"
                        `, `font-family: monospace`);
                 if (dhealth <= 0) {
+                    console.log("When you blow the final rock against the demon, it's too weakened to have a physical body. ")
+                    console.log("You then suck the demon in your vacuum cleaner. ")
                     einde4()
                     break
                 } else if (dhealth >= 0) {
@@ -521,10 +523,24 @@ function Game() {
                     }
                 }
             } else if (fightd === dfight[index]) {
-                console.log("You try to suck the demon with your vacuum cleaner, but it doesn't seem to work.")
-                console.log("The demon look at you weird and laughs at you. You lose morale. ")
-                DemonEncounter()
-                break
+                if (dhealth >= 10) {
+                    console.log("You try to suck the demon with your vacuum cleaner, but it doesn't seem to work.")
+                    console.log("The demon look at you weird and laughs at you. Then he slaps your face. ")
+                    hp -= 20
+                    console.log("The demon does 20 damage to you. You have "+hp+" hp left.")
+                    if (hp < 1) {
+                        einde3()
+                        break
+                    } else if (hp > 1) {
+                        DemonEncounter()
+                        break
+                    }
+                } else if (dhealth <= 10) {
+                    console.log("You weakened the deamon a lot with al the rock throwing against his head, you manage to suck him with your vacuum cleaner. ")
+                    einde4()
+                    break
+                }
+                
             } else {
                 console.log("You have decided to quit the game. ")
                 gameover()
@@ -618,8 +634,6 @@ function Game() {
     }
 
     function einde4() {
-        console.log("When you blow the final rock against the demon, it's too weakened to have a physical body. ")
-        console.log("You then suck the demon in your vacuum cleaner. ")
         console.log("After sucking up the demon you notice the hooded satanic culprit and you then try to suck him up too. ")
         console.log("You notice you can only suck up his black cloak, revealing the satanic culprit. ")
         console.log("It is the weird kid, Kevin! ")
