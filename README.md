@@ -10,3 +10,4 @@ De tekstbased adventure is via NodeJS te spelen.
 
 Idee: Een haunted house waar het eerst lijkt of er geesten zijn, maar je er later achter komt dat er een satanistische sekte in verborgen is die demonen oproepen.
 
+HelloYou is de base game die je oneindig veel kan spelen en HelloYouV2 Heeft een extra einde wat wel je spel helemaal gaat afsluiten na de extra einde.
