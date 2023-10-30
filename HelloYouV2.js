@@ -370,7 +370,7 @@ function Game() {
                     break
                 } else if (gdodge <= 8) {
                     hp -= ghostattack
-                    console.log("You tried to defend yourself against the ghost, but you failed miserably. The ghost does " + ghostattack + " damage on you. You have " + hp + " hp left.")
+                    console.log("You tried to defend yourself against the ghost, but you failed miserably. The ghost does " + ghostattack + " damage on you. You have " + hp + " hp left.  The ghost has " + ghosthealth + " hp left. ")
                     if (hp < 1) {
                         einde3()
                         break
@@ -496,7 +496,7 @@ function Game() {
                     break
                 } else if (dhealth >= 0) {
                     hp -= dattack
-                    console.log("The demon tries to possess. You feel yourself weakening. You lose " + dattack + " hp, you still have " + hp + " hp left. ")
+                    console.log("The demon tries to possess. You feel yourself weakening. You lose " + dattack + " hp, you still have " + hp + " hp left. The demon has " + dhealth + " hp left.")
 
                     if (hp < 1) {
                         einde3()
