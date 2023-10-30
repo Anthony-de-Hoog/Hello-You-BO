@@ -791,6 +791,7 @@ _/  _/'-./'-; '-.\\_ / \\_'\\'. '. ==='.
         console.log("Everything goes black and you hear some people crying. ")
         console.log("Then the last thing you hear is the sound of a peep. ")
         console.log("True ending 1: Goodnight. ")
+        console.log("Dit is het officiele einde. Het spel wordt nu afgesloten.")
     } else if (antwoordtrueb === vraagfinal[index]) {
         console.log("'Goodbye, Katie.' ")
         console.log("'Goodbye, Kevin.' ")
@@ -799,6 +800,7 @@ _/  _/'-./'-; '-.\\_ / \\_'\\'. '. ==='.
         console.log("You finally have survived this nightmare. ")
         console.log("Now you can finally try to move on. ")
         console.log("True ending 2: Moving on. ")
+        console.log("Dit is het officiele einde. Het spel wordt nu afgesloten.")
     } else {
         console.log("You have decided to quit the game. ")
          }
