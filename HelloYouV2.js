@@ -348,7 +348,7 @@ function Game() {
                     break
                 } else if (ghosthealth >= 0) {
                     hp -= ghostattack
-                    console.log("The ghost tries to posses you. You dodge him but hit your head against the wall and do " + ghostattack + " damage on yourself, you still have " + hp + " hp left. ")
+                    console.log("The ghost tries to posses you. You dodge him but hit your head against the wall and do " + ghostattack + " damage on yourself, you still have " + hp + " hp left. The ghost has " + ghosthealth + " hp left.  ")
 
                     if (hp < 1) {
                         einde3()
@@ -370,7 +370,7 @@ function Game() {
                     break
                 } else if (gdodge <= 8) {
                     hp -= ghostattack
-                    console.log("You tried to defend yourself against the ghost, but you failed miserably. The ghost does " + ghostattack + " damage on you. You have " + hp + " hp left.  The ghost has " + ghosthealth + " hp left. ")
+                    console.log("You tried to defend yourself against the ghost, but you failed miserably. The ghost does " + ghostattack + " damage on you. You have " + hp + " hp left. The ghost has " + ghosthealth + " hp left. ")
                     if (hp < 1) {
                         einde3()
                         break
@@ -688,11 +688,11 @@ function Game() {
         stoppen = "nee, ik wil stoppen."
         laatstevraag = ["Ja, ik wil opnieuw spelen", "nee, ik wil stoppen."]
         index = readlineSync.keyInSelect(laatstevraag, "Wil je opnieuw spelen?");
-        
+
 
         if (opnieuw === laatstevraag[index]) {
             console.log("Het spel begint opnieuw.")
-            
+
             if (end1count < 1 || end2count < 1 || end3count < 1 || end4count < 1) {
                 Game()
             } else if (end1count > 0 && end2count > 0 && end3count > 0 && end4count > 0) {
@@ -704,7 +704,7 @@ function Game() {
         }
     }
 
-   
+
 }
 
 
@@ -803,5 +803,5 @@ _/  _/'-./'-; '-.\\_ / \\_'\\'. '. ==='.
         console.log("Dit is het officiele einde. Het spel wordt nu afgesloten.")
     } else {
         console.log("You have decided to quit the game. ")
-         }
     }
+}

@@ -343,7 +343,7 @@ function Game() {
                     break
                 } else if (ghosthealth >= 0) {
                     hp -= ghostattack
-                    console.log("The ghost tries to posses you. You dodge him but hit your head against the wall and do " + ghostattack + " damage on yourself, you still have " + hp + " hp left. ")
+                    console.log("The ghost tries to posses you. You dodge him but hit your head against the wall and do " + ghostattack + " damage on yourself, you still have " + hp + " hp left.  The ghost has " + ghosthealth + " hp left. ")
 
                     if (hp < 1) {
                         einde3()
